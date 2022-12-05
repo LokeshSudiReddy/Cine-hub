@@ -1,0 +1,12 @@
+.logo{
+    height: 100px;
+}
+.header{
+    background-color: black;
+}
+
+  
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: black;
+}
