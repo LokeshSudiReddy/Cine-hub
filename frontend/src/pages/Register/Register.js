@@ -26,10 +26,7 @@ const Register = () => {
         )
 
     }
-    if(token){
-        // console.log(data)
-       return <Navigate to='/home' />
-    }
+
     return (
         <div>
             <center>

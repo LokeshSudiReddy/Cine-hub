@@ -17,7 +17,7 @@ export default function NavBar(){
         }).then(res => setData(res.data)).catch((err) => console.log(err))
     },[])
     if(!token){
-        return <Navigate to='/login' />
+        return <Navigate to='/' />
     }
     return(
         <header className='header'>

@@ -11,19 +11,21 @@ export default function Home(){
     const base_url="https://image.tmdb.org/t/p/original/";
     const [token,setToken] = useContext(store)
     const [data,setData] = useState(null);
-    // const [movies,setMovies]=useState(null);
     useEffect(() =>{
-        axios.get('http://localhost:5000/myprofile',{
+        // axios.get('http://localhost:5000/myprofile',{
+        //     headers: {
+        //         'x-token' : token
+        //     }
+        // }).then(res => setData(res.data)).catch((err) => console.log(err))
+        const helper=async()=>{
+            await axios.get('http://localhost:5000/myprofile',{
             headers: {
                 'x-token' : token
             }
         }).then(res => setData(res.data)).catch((err) => console.log(err))
+        }
+        helper()
     },[])
-    // const getLikedMovies=()=>{
-    //     // const movies=data.likedMovies
-    //     console.log("hi")
-    //     // return movies
-    // }
     return(
         <div>
             <NavBar/>
@@ -31,17 +33,6 @@ export default function Home(){
         <Link to='/Mylist' state={data}>
                         FAVOURITES
                     </Link> 
-        {/* <div className="posters">
-                {movies.map(movie=>(
-                    //`'/Movie:${movie?.title||movie?.name||movie?.original_name}'`
-                    <Link to='/Movie' state={movie}>
-                        <img key={movie.id} 
-                        className='poster'     
-                        src={base_url+movie.poster_path} 
-                        alt={movie.name} />
-                    </Link>                          
-                ))}
-            </div> */}
           <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLarge={true}></Row>
           <Row title="Trending Now" fetchUrl={requests.fetchTrending}></Row>
           <Row title="Top Rated" fetchUrl={requests.fetchTopRated}></Row>
