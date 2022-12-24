@@ -18,6 +18,15 @@ const Mylist = (props) => {
                         alt={movie.name} />
                     </Link>                          
                 ))}
+                {data.rented.map(obj=>(
+                    //`'/Movie:${movie?.title||movie?.name||movie?.original_name}'`
+                    <Link to='/Movie' state={obj.movie}>
+                        <img key={obj.movie.id} 
+                        className='poster'     
+                        src={base_url+obj.movie.poster_path} 
+                        alt={obj.movie.name} />
+                    </Link>                          
+                ))}
             </div>
         </div>
     )

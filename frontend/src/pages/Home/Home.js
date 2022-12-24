@@ -26,12 +26,33 @@ export default function Home(){
         }
         helper()
     },[])
+    if(data){
+        const cur=new Date();
+        console.log(cur)
+        console.log(data.rented)
+       for(let i in data.rented){
+            async function helper(){
+                console.log("fucked")
+                await axios.post('http://localhost:5000/api/user/remove',{
+                    email:data.email,
+                    movieId:data.rented[i].movie.id
+                })
+            }
+            const x=cur.getTime();
+            const prev=new Date(data.rented[i].date);
+            const y=prev.getTime()
+            if(x>=y){
+                console.log("fuck")
+                helper();
+            }
+       }
+    }
     return(
         <div>
             <NavBar/>
         <Grid/>
         <Link to='/Mylist' state={data}>
-                        FAVOURITES
+                       <button>MyList</button>
                     </Link> 
           <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLarge={true}></Row>
           <Row title="Trending Now" fetchUrl={requests.fetchTrending}></Row>

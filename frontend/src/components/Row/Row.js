@@ -13,7 +13,6 @@ function Row({ title,fetchUrl,isLarge}){
         }
         fetchData();
     },[fetchUrl])
-
     return (
         <div className='row'>
             <h2>{title}</h2>

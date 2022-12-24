@@ -6,8 +6,10 @@ import Movie from './pages/Movie/Movie';
 import FilteredMovies from './pages/FilteredMovies/FilteredMovies';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
-
+import Searched from './pages/Searched/Searched';
 import Mylist from './pages/Mylist/Mylist'
+import WalletCard from './pages/Payment/WalletCard';
+import Profile from './pages/Profile/Profile';
 // import Myprofile from './Myprofile';
 
 export const store = createContext();
@@ -28,7 +30,9 @@ export default function App(){
           <Route path='/Filtered' element={<FilteredMovies/>}/>
           <Route path='/Home' element={<Home/>}/>
           <Route path='/Mylist' element={<Mylist/>}/>
-
+          <Route path='/searched' element={<Searched/>}/>
+          <Route path='/payment' element={<WalletCard/>}/>
+          <Route path='/profile' element={<Profile/>}/>
         </Routes>
       </Router>
       </store.Provider>

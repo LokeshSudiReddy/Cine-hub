@@ -19,7 +19,9 @@ let Registeruser = new mongoose.Schema({
         required : true,
     },
     likedMovies: Array,
-    
+    likedMoviesids:Array,
+    rented: Array,
+    rentedids:Array,
 })
 
 module.exports = mongoose.model('Registeruser',Registeruser)

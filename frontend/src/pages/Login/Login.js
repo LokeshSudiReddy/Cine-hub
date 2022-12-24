@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react'
 import axios from 'axios';
 import {store} from '../../App';
 import { Navigate,Link } from 'react-router-dom';
-
+import './Login.css'
 const Login = () => {
     const [token,setToken] = useContext(store)
     const [data,setData] = useState({
@@ -25,14 +25,17 @@ const Login = () => {
     return (
         <div>
             <center>
-            <form onSubmit={submitHandler}>
-                <h3>Login</h3>
+            <form onSubmit={submitHandler} className='form'>
+                <div>
+                <h3 className='head'>Login</h3>
                 <input type="email" onChange={changeHandler} name="email" placeholder="Email" /><br />
                 <input type="password" onChange={changeHandler} name="password" placeholder="Password" /><br />
                 <input type="submit" value="Login" /><br />
                 <Link to='/register'>
-                        click here if new user
-                </Link>      
+                        <button>new user</button>
+                </Link>
+                </div>
+                      
             </form>
             </center>
         </div>

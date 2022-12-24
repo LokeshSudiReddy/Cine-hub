@@ -3,10 +3,25 @@
 }
 .header{
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
   
-.button:hover {
-    background-color: #4CAF50; /* Green */
-    color: black;
+.search {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing:border-box;
+    background-color: rgb(43, 147, 43);
+    color:white;
+    transition: transform 450ms;
+    cursor: pointer;
+}
+.search:hover{
+    transform: scale(1.08);
+
+}
+.p{
+    float: right;
 }
