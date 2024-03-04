@@ -32,7 +32,7 @@ export default function Home(){
         console.log(data.rented)
        for(let i in data.rented){
             async function helper(){
-                console.log("fucked")
+             
                 await axios.post('http://localhost:5000/api/user/remove',{
                     email:data.email,
                     movieId:data.rented[i].movie.id
@@ -42,7 +42,7 @@ export default function Home(){
             const prev=new Date(data.rented[i].date);
             const y=prev.getTime()
             if(x>=y){
-                console.log("fuck")
+             
                 helper();
             }
        }
