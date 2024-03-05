@@ -37,9 +37,7 @@ export default function NavBar(){
             </Link>
             
             <button  onClick={() => setToken(null)}>Logout</button>
-            {/* <Link to='/searched'>
-                search
-            </Link> */}
+          
         </header>
-    )
+    )
 }

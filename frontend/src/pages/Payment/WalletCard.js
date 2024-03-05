@@ -1,4 +1,4 @@
-// https://docs.metamask.io/guide/ethereum-provider.html#using-the-provider
+
 import Web3 from 'web3'
 import React, {useState} from 'react'
 import {ethers} from 'ethers'
@@ -142,7 +142,7 @@ const WalletCard = () => {
 			<div className='balanceDisplay'>
 				<h3>Balance: {bal}</h3>
 			</div>
-			{/* {errorMessage} */}
+		
 		</div>
 	);
 }

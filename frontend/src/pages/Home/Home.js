@@ -12,11 +12,7 @@ export default function Home(){
     const [token,setToken] = useContext(store)
     const [data,setData] = useState(null);
     useEffect(() =>{
-        // axios.get('http://localhost:5000/myprofile',{
-        //     headers: {
-        //         'x-token' : token
-        //     }
-        // }).then(res => setData(res.data)).catch((err) => console.log(err))
+
         const helper=async()=>{
             await axios.get('http://localhost:5000/myprofile',{
             headers: {

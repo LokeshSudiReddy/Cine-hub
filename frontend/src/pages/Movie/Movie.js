@@ -11,7 +11,7 @@ export default function Movie(props){
     const movie=location.state;
     const [token,setToken] = useContext(store);
     const [data,setData] = useState(null);
-    // console.log(data)
+ 
     useEffect(() =>{
         const helper=async()=>{
             await axios.get('http://localhost:5000/myprofile',{
@@ -21,17 +21,8 @@ export default function Movie(props){
         }).then(res => setData(res.data)).catch((err) => console.log(err))
         }
         helper()      
-    },[])
-// const addToList = async () => {
-//         try {
-//           await axios.post("http://localhost:5000/api/user/add", {
-//             email: data.email,
-//             data: movie,
-//           });
-//         } catch (error) {
-//           console.log(error);
-//         }
-//       };
+    },[])
+
 if(data!=null){
         return(
             <div className='movie'
@@ -42,7 +33,7 @@ if(data!=null){
                     <h1 className='description'>{movie.overview}</h1>
                     <div className='banner_buttons'>
                         <button className='banner_button'>Play</button>
-                        {/* <button className='banner_button' onClick={addToList}>Buy</button> */}
+                     
                         <Window user={data} movie={movie}/>
 
                     </div>

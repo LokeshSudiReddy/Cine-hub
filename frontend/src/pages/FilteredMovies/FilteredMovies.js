@@ -18,7 +18,7 @@ function FilteredMovies({ title,fetchUrl}){
             <h1 className='title'>{object.title}</h1>
             <div className="posters">
                 {movies.map(movie=>(
-                    //`'/Movie:${movie?.title||movie?.name||movie?.original_name}'`
+              
                     <Link to='/Movie' state={movie}>
                         <img key={movie.id} 
                         className='poster'     

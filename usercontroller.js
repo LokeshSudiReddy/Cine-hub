@@ -13,7 +13,7 @@ module.exports.getLikedMovies = async (req, res) => {
 };
 module.exports.isLiked=async(req,res)=>{
   try{
-    const {email,movie}=req.body;
+    const {email,data}=req.body;
     const user = await await User.findOne({ email });
     if(user){
       const { likedMovies } = user;
@@ -55,16 +55,14 @@ module.exports.addToLikedMovies = async (req, res) => {
 
 module.exports.removeFromLikedMovies = async (req, res) => {
   try {
-    console.log("ellehe")
+  
     const { email, movieId } = req.body;
-    // console.log(email)
-    // console.log(movieId)
+
     const user = await User.findOne({ email });
     if (user) {
       const a = user.rented;
       const b=user.rentedids;
-      // console.log(a)
-      // console.log(b)
+
       const movieIndex = a.findIndex(({ id }) => id === movieId);
       console.log("check 1")
       console.log(movieIndex)
@@ -98,7 +96,7 @@ module.exports.removeFromLikedMovies = async (req, res) => {
       console.log("check 6")
     } else console.log("check 8");
   } catch (error) {
-    // return res.json({ msg: "Error removing movie to the liked list" });
+
     console.log("error")
   }
 };
